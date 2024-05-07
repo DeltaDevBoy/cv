@@ -1,32 +1,31 @@
-/* Reset des styles par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1d1d1d;
+    font-family: "Monaco", monospace;
+    background-color: #000;
     color: #b3b3b3;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .pipboy {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pipboy-screen {
-    background-color: #000;
+    width: 600px;
+    height: 400px;
+    background-color: #1d1d1d;
     border: 5px solid #8cff57;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .pipboy-menu {
-    background-color: #1d1d1d;
+    background-color: #000;
     padding: 10px;
 }
 
@@ -44,6 +43,7 @@ body {
     color: #b3b3b3;
     text-decoration: none;
     padding: 5px 10px;
+    font-size: 14px;
 }
 
 .pipboy-menu a:hover {
@@ -56,4 +56,15 @@ body {
 
 .pipboy-content {
     padding: 20px;
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+
+/* Styles spécifiques pour chaque onglet */
+#personal-info {
+    display: block;
+}
+
+#experience, #education, #skills, #projects {
+    display: none;
 }
