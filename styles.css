@@ -1,31 +1,60 @@
-/* Styles généraux */
-body {
-    font-family: "Monaco", monospace;
-    background-color: #000;
-    color: #b3b3b3;
+/* Reset des styles par défaut */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+    color: #b3b3b3;
 }
 
 .pipboy {
-    width: 100%;
-    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .pipboy-screen {
-    width: 600px;
-    height: 400px;
-    background-color: #1d1d1d;
-    border: 5px solid #8cff57;
+    background-color: #111;
+    border: 10px solid #8cff57;
     border-radius: 10px;
     overflow: hidden;
+    width: 600px;
+    height: 400px;
+}
+
+.pipboy-top {
+    padding: 10px;
+    border-bottom: 1px solid #8cff57;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pipboy-bottom {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 50px);
+}
+
+.pipboy-button {
+    width: 50px;
+    height: 50px;
+    background-color: #8cff57;
+    border-radius: 50%;
+}
+
+.pipboy-display {
+    width: calc(100% - 70px);
+    height: 50px;
+    background-color: #000;
 }
 
 .pipboy-menu {
-    background-color: #000;
     padding: 10px;
 }
 
@@ -37,13 +66,13 @@ body {
 
 .pipboy-menu li {
     display: inline;
+    margin-right: 10px;
 }
 
 .pipboy-menu a {
-    color: #b3b3b3;
     text-decoration: none;
-    padding: 5px 10px;
-    font-size: 14px;
+    color: #b3b3b3;
+    font-size: 20px;
 }
 
 .pipboy-menu a:hover {
@@ -55,16 +84,16 @@ body {
 }
 
 .pipboy-content {
-    padding: 20px;
-    height: calc(100% - 40px);
-    overflow: auto;
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 /* Styles spécifiques pour chaque onglet */
-#personal-info {
+#stats {
     display: block;
 }
 
-#experience, #education, #skills, #projects {
+#inventory, #data, #map, #log {
     display: none;
 }
