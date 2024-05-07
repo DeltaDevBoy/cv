@@ -18,46 +18,42 @@ body {
     margin: 0 auto;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
+.pipboy-screen {
+    background-color: #000;
+    border: 5px solid #8cff57;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 36px;
-    color: #8cff57;
+.pipboy-menu {
+    background-color: #1d1d1d;
+    padding: 10px;
 }
 
-section {
-    margin-bottom: 30px;
-}
-
-h2 {
-    font-size: 24px;
-    color: #8cff57;
-    margin-bottom: 10px;
-}
-
-h3 {
-    font-size: 20px;
-    color: #8cff57;
-    margin-bottom: 5px;
-}
-
-ul, ol {
+.pipboy-menu ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-li {
-    margin-bottom: 5px;
+.pipboy-menu li {
+    display: inline;
 }
 
-footer {
-    text-align: center;
-    margin-top: 50px;
+.pipboy-menu a {
+    color: #b3b3b3;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.pipboy-menu a:hover {
     color: #8cff57;
 }
 
-footer p {
-    font-size: 14px;
+.pipboy-menu .active a {
+    color: #8cff57;
+}
+
+.pipboy-content {
+    padding: 20px;
 }
