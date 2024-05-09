@@ -1,27 +1,41 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const menuItems = document.querySelectorAll(".pipboy-menu a");
-    const contentSections = document.querySelectorAll(".pipboy-content > section");
+  // Exemple : Ajouter des statistiques dynamiques
+  const healthStat = document.querySelector(".health-stat");
+  const energyStat = document.querySelector(".energy-stat");
+  const radsStat = document.querySelector(".rads-stat");
 
-    // Fonction pour activer un onglet et afficher le contenu correspondant
-    function activateTab(tabIndex) {
-        // Désactiver tous les onglets
-        menuItems.forEach(item => item.parentElement.classList.remove("active"));
-        // Masquer tous les contenus de section
-        contentSections.forEach(section => section.style.display = "none");
+  let health = 100;
+  let energy = 100;
+  let rads = 0;
 
-        // Activer l'onglet correspondant et afficher le contenu de la section
-        menuItems[tabIndex].parentElement.classList.add("active");
-        contentSections[tabIndex].style.display = "block";
+  // Fonction pour mettre à jour les statistiques
+  function updateStats() {
+    healthStat.textContent = "PV: " + health;
+    energyStat.textContent = "Energie: " + energy;
+    radsStat.textContent = "Rads: " + rads;
+  }
+
+  // Exemple d'événement pour réduire la santé lors d'un clic
+  healthStat.addEventListener("click", function() {
+    if (health > 0) {
+      health -= 10;
+      updateStats();
     }
+  });
 
-    // Par défaut, afficher le contenu de la première section
-    activateTab(0);
+  // Exemple d'événement pour ajouter des rads lors d'un clic
+  radsStat.addEventListener("click", function() {
+    rads += 5;
+    updateStats();
+  });
 
-    // Gérer les clics sur les onglets
-    menuItems.forEach((item, index) => {
-        item.addEventListener("click", function(event) {
-            event.preventDefault();
-            activateTab(index);
-        });
-    });
+  // Exemple d'événement pour restaurer la santé et l'énergie
+  document.querySelector(".restoration-button").addEventListener("click", function() {
+    health = 100;
+    energy = 100;
+    updateStats();
+  });
+
+  // Appel initial pour afficher les statistiques
+  updateStats();
 });
